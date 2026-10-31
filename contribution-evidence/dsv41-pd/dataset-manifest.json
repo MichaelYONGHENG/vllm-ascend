@@ -1,0 +1,394 @@
+{
+  "dataset": "SWE-bench/SWE-smith-trajectories",
+  "revision": "08e109b4a59eaeebf80e4675cd125d42e7ac99a4",
+  "split": "tool",
+  "seed": 42,
+  "turns": 8,
+  "selected": [
+    {
+      "instance_id": "mahmoud__glom.fb3c4e76.func_pm_remove_assign__tuizqj7y",
+      "traj_id": "mahmoud__glom.fb3c4e76.func_pm_remove_assign__tuizqj7y.8qa84d2e",
+      "row_idx": 25,
+      "chars": 23351
+    },
+    {
+      "instance_id": "bottlepy__bottle.a8dfef30.func_pm_ctrl_invert_if__rsfvwrzq",
+      "traj_id": "bottlepy__bottle.a8dfef30.func_pm_ctrl_invert_if__rsfvwrzq.8qa84d2e",
+      "row_idx": 28,
+      "chars": 25373
+    },
+    {
+      "instance_id": "amueller__word_cloud.ec24191c.func_pm_ctrl_shuffle__3gl981ew",
+      "traj_id": "amueller__word_cloud.ec24191c.func_pm_ctrl_shuffle__3gl981ew.8qa84d2e",
+      "row_idx": 7,
+      "chars": 22629
+    },
+    {
+      "instance_id": "iterative__dvc.1d6ea681.func_pm_ctrl_invert_if__uiypznal",
+      "traj_id": "iterative__dvc.1d6ea681.func_pm_ctrl_invert_if__uiypznal.8qa84d2e",
+      "row_idx": 24,
+      "chars": 8217
+    },
+    {
+      "instance_id": "pydata__patsy.a5d16484.func_pm_op_change__kh96ntd9",
+      "traj_id": "pydata__patsy.a5d16484.func_pm_op_change__kh96ntd9.8qa84d2e",
+      "row_idx": 50,
+      "chars": 15692
+    },
+    {
+      "instance_id": "lepture__mistune.bf54ef67.func_pm_ctrl_shuffle__revil84t",
+      "traj_id": "lepture__mistune.bf54ef67.func_pm_ctrl_shuffle__revil84t.8qa84d2e",
+      "row_idx": 37,
+      "chars": 20739
+    },
+    {
+      "instance_id": "mozillazg__python-pinyin.e42dede5.func_pm_remove_assign__dkvumnr1",
+      "traj_id": "mozillazg__python-pinyin.e42dede5.func_pm_remove_assign__dkvumnr1.8qa84d2e",
+      "row_idx": 20,
+      "chars": 14774
+    },
+    {
+      "instance_id": "weaveworks__grafanalib.5c3b17ed.func_pm_ctrl_shuffle__l9khaqft",
+      "traj_id": "weaveworks__grafanalib.5c3b17ed.func_pm_ctrl_shuffle__l9khaqft.8qa84d2e",
+      "row_idx": 64,
+      "chars": 21156
+    },
+    {
+      "instance_id": "seperman__deepdiff.ed252022.func_pm_remove_cond__zfum8cf3",
+      "traj_id": "seperman__deepdiff.ed252022.func_pm_remove_cond__zfum8cf3.8qa84d2e",
+      "row_idx": 51,
+      "chars": 26698
+    },
+    {
+      "instance_id": "Project-MONAI__MONAI.a09c1f08.func_pm_remove_assign__z47lyy02",
+      "traj_id": "Project-MONAI__MONAI.a09c1f08.func_pm_remove_assign__z47lyy02.8qa84d2e",
+      "row_idx": 10,
+      "chars": 25888
+    },
+    {
+      "instance_id": "r1chardj0n3s__parse.30da9e4f.func_pm_remove_cond__k4df18dk",
+      "traj_id": "r1chardj0n3s__parse.30da9e4f.func_pm_remove_cond__k4df18dk.8qa84d2e",
+      "row_idx": 44,
+      "chars": 19898
+    },
+    {
+      "instance_id": "scrapy__scrapy.35212ec5.func_pm_remove_cond__jwp4lc0o",
+      "traj_id": "scrapy__scrapy.35212ec5.func_pm_remove_cond__jwp4lc0o.8qa84d2e",
+      "row_idx": 19,
+      "chars": 26934
+    },
+    {
+      "instance_id": "andialbrecht__sqlparse.e57923b3.func_pm_class_rm_funcs__rbjxq852",
+      "traj_id": "andialbrecht__sqlparse.e57923b3.func_pm_class_rm_funcs__rbjxq852.8qa84d2e",
+      "row_idx": 47,
+      "chars": 21408
+    },
+    {
+      "instance_id": "pydata__patsy.a5d16484.func_pm_ctrl_shuffle__p93vnmwg",
+      "traj_id": "pydata__patsy.a5d16484.func_pm_ctrl_shuffle__p93vnmwg.8qa84d2e",
+      "row_idx": 34,
+      "chars": 17543
+    },
+    {
+      "instance_id": "dask__dask.5f61e423.func_pm_remove_cond__qmm9c0fa",
+      "traj_id": "dask__dask.5f61e423.func_pm_remove_cond__qmm9c0fa.8qa84d2e",
+      "row_idx": 17,
+      "chars": 21698
+    },
+    {
+      "instance_id": "paramiko__paramiko.23f92003.func_pm_ctrl_invert_if__qvlmt37m",
+      "traj_id": "paramiko__paramiko.23f92003.func_pm_ctrl_invert_if__qvlmt37m.8qa84d2e",
+      "row_idx": 23,
+      "chars": 31399
+    },
+    {
+      "instance_id": "matthewwithanm__python-markdownify.6258f5c3.func_pm_remove_assign__lkj9fjf0",
+      "traj_id": "matthewwithanm__python-markdownify.6258f5c3.func_pm_remove_assign__lkj9fjf0.8qa84d2e",
+      "row_idx": 40,
+      "chars": 20513
+    },
+    {
+      "instance_id": "jawah__charset_normalizer.1fdd6463.func_pm_ctrl_shuffle__a0443m9b",
+      "traj_id": "jawah__charset_normalizer.1fdd6463.func_pm_ctrl_shuffle__a0443m9b.8qa84d2e",
+      "row_idx": 45,
+      "chars": 10582
+    },
+    {
+      "instance_id": "keleshev__schema.24a30457.func_pm_ctrl_shuffle__t2num235",
+      "traj_id": "keleshev__schema.24a30457.func_pm_ctrl_shuffle__t2num235.8qa84d2e",
+      "row_idx": 32,
+      "chars": 42245
+    },
+    {
+      "instance_id": "jd__tenacity.0d40e76f.func_pm_ctrl_shuffle__ct54v4gk",
+      "traj_id": "jd__tenacity.0d40e76f.func_pm_ctrl_shuffle__ct54v4gk.8qa84d2e",
+      "row_idx": 21,
+      "chars": 23589
+    },
+    {
+      "instance_id": "pallets__jinja.ada0a9a6.func_pm_ctrl_invert_if__ik1ndo54",
+      "traj_id": "pallets__jinja.ada0a9a6.func_pm_ctrl_invert_if__ik1ndo54.8qa84d2e",
+      "row_idx": 12,
+      "chars": 24639
+    },
+    {
+      "instance_id": "django-money__django-money.835c1ab8.func_pm_class_rm_funcs__nod6kl9o",
+      "traj_id": "django-money__django-money.835c1ab8.func_pm_class_rm_funcs__nod6kl9o.8qa84d2e",
+      "row_idx": 55,
+      "chars": 17241
+    },
+    {
+      "instance_id": "marshmallow-code__apispec.8b421526.func_pm_ctrl_invert_if__sfjed7bx",
+      "traj_id": "marshmallow-code__apispec.8b421526.func_pm_ctrl_invert_if__sfjed7bx.8qa84d2e",
+      "row_idx": 43,
+      "chars": 37579
+    },
+    {
+      "instance_id": "pygments__pygments.27649ebb.func_pm_ctrl_invert_if__1rarttzj",
+      "traj_id": "pygments__pygments.27649ebb.func_pm_ctrl_invert_if__1rarttzj.8qa84d2e",
+      "row_idx": 53,
+      "chars": 27850
+    },
+    {
+      "instance_id": "marshmallow-code__marshmallow.9716fc62.func_pm_class_rm_funcs__e35a2bbx",
+      "traj_id": "marshmallow-code__marshmallow.9716fc62.func_pm_class_rm_funcs__e35a2bbx.8qa84d2e",
+      "row_idx": 3,
+      "chars": 26358
+    },
+    {
+      "instance_id": "modin-project__modin.8c7799fd.func_pm_remove_assign__xrusxciv",
+      "traj_id": "modin-project__modin.8c7799fd.func_pm_remove_assign__xrusxciv.8qa84d2e",
+      "row_idx": 33,
+      "chars": 26388
+    },
+    {
+      "instance_id": "agronholm__exceptiongroup.0b4f4937.func_pm_remove_loop__5rijazp0",
+      "traj_id": "agronholm__exceptiongroup.0b4f4937.func_pm_remove_loop__5rijazp0.8qa84d2e",
+      "row_idx": 27,
+      "chars": 33066
+    },
+    {
+      "instance_id": "amueller__word_cloud.ec24191c.func_pm_ctrl_invert_if__2afmf2dq",
+      "traj_id": "amueller__word_cloud.ec24191c.func_pm_ctrl_invert_if__2afmf2dq.8qa84d2e",
+      "row_idx": 60,
+      "chars": 21386
+    },
+    {
+      "instance_id": "luozhouyang__python-string-similarity.115acaac.func_pm_remove_cond__gch4emzr",
+      "traj_id": "luozhouyang__python-string-similarity.115acaac.func_pm_remove_cond__gch4emzr.8qa84d2e",
+      "row_idx": 4,
+      "chars": 16163
+    },
+    {
+      "instance_id": "benoitc__gunicorn.bacbf8aa.func_pm_remove_loop__00fb1goe",
+      "traj_id": "benoitc__gunicorn.bacbf8aa.func_pm_remove_loop__00fb1goe.8qa84d2e",
+      "row_idx": 62,
+      "chars": 28948
+    },
+    {
+      "instance_id": "Knio__dominate.9082227e.func_pm_remove_cond__inf10y4j",
+      "traj_id": "Knio__dominate.9082227e.func_pm_remove_cond__inf10y4j.8qa84d2e",
+      "row_idx": 59,
+      "chars": 22307
+    },
+    {
+      "instance_id": "sqlfluff__sqlfluff.50a1c4b6.func_pm_remove_loop__o8znmafj",
+      "traj_id": "sqlfluff__sqlfluff.50a1c4b6.func_pm_remove_loop__o8znmafj.8qa84d2e",
+      "row_idx": 54,
+      "chars": 26321
+    },
+    {
+      "instance_id": "pydata__patsy.a5d16484.func_pm_ctrl_invert_if__kmfroe83",
+      "traj_id": "pydata__patsy.a5d16484.func_pm_ctrl_invert_if__kmfroe83.8qa84d2e",
+      "row_idx": 11,
+      "chars": 15728
+    },
+    {
+      "instance_id": "django-money__django-money.835c1ab8.func_pm_ctrl_shuffle__viqnyl9u",
+      "traj_id": "django-money__django-money.835c1ab8.func_pm_ctrl_shuffle__viqnyl9u.8qa84d2e",
+      "row_idx": 0,
+      "chars": 9186
+    },
+    {
+      "instance_id": "pndurette__gTTS.dbcda4f3.func_pm_ctrl_shuffle__0luttjxp",
+      "traj_id": "pndurette__gTTS.dbcda4f3.func_pm_ctrl_shuffle__0luttjxp.8qa84d2e",
+      "row_idx": 65,
+      "chars": 39543
+    },
+    {
+      "instance_id": "pallets__jinja.ada0a9a6.func_pm_remove_cond__0r1sepln",
+      "traj_id": "pallets__jinja.ada0a9a6.func_pm_remove_cond__0r1sepln.8qa84d2e",
+      "row_idx": 31,
+      "chars": 30705
+    },
+    {
+      "instance_id": "mahmoud__glom.fb3c4e76.func_pm_remove_assign__dkikiptf",
+      "traj_id": "mahmoud__glom.fb3c4e76.func_pm_remove_assign__dkikiptf.8qa84d2e",
+      "row_idx": 49,
+      "chars": 30642
+    },
+    {
+      "instance_id": "mahmoud__glom.fb3c4e76.func_pm_ctrl_invert_if__raknbles",
+      "traj_id": "mahmoud__glom.fb3c4e76.func_pm_ctrl_invert_if__raknbles.8qa84d2e",
+      "row_idx": 29,
+      "chars": 23158
+    },
+    {
+      "instance_id": "encode__starlette.db5063c2.func_pm_class_rm_funcs__jqyg7xg2",
+      "traj_id": "encode__starlette.db5063c2.func_pm_class_rm_funcs__jqyg7xg2.8qa84d2e",
+      "row_idx": 57,
+      "chars": 18914
+    },
+    {
+      "instance_id": "google__textfsm.c31b6007.func_pm_ctrl_shuffle__hjtsbxdc",
+      "traj_id": "google__textfsm.c31b6007.func_pm_ctrl_shuffle__hjtsbxdc.8qa84d2e",
+      "row_idx": 13,
+      "chars": 15511
+    },
+    {
+      "instance_id": "pydicom__pydicom.7d361b3d.func_pm_remove_cond__c4ctdv6a",
+      "traj_id": "pydicom__pydicom.7d361b3d.func_pm_remove_cond__c4ctdv6a.8qa84d2e",
+      "row_idx": 39,
+      "chars": 29728
+    },
+    {
+      "instance_id": "msiemens__tinydb.10644a0e.func_pm_ctrl_shuffle__lqjyurqa",
+      "traj_id": "msiemens__tinydb.10644a0e.func_pm_ctrl_shuffle__lqjyurqa.8qa84d2e",
+      "row_idx": 58,
+      "chars": 24483
+    },
+    {
+      "instance_id": "pyasn1__pyasn1.0f07d724.func_pm_ctrl_shuffle__nl69pjbw",
+      "traj_id": "pyasn1__pyasn1.0f07d724.func_pm_ctrl_shuffle__nl69pjbw.8qa84d2e",
+      "row_idx": 42,
+      "chars": 25274
+    },
+    {
+      "instance_id": "john-kurkowski__tldextract.3d1bf184.func_pm_remove_cond__g83pi8sy",
+      "traj_id": "john-kurkowski__tldextract.3d1bf184.func_pm_remove_cond__g83pi8sy.8qa84d2e",
+      "row_idx": 36,
+      "chars": 17921
+    },
+    {
+      "instance_id": "pydata__patsy.a5d16484.func_pm_op_change__0wj92703",
+      "traj_id": "pydata__patsy.a5d16484.func_pm_op_change__0wj92703.8qa84d2e",
+      "row_idx": 63,
+      "chars": 14492
+    },
+    {
+      "instance_id": "weaveworks__grafanalib.5c3b17ed.func_pm_remove_loop__nopdbhmj",
+      "traj_id": "weaveworks__grafanalib.5c3b17ed.func_pm_remove_loop__nopdbhmj.8qa84d2e",
+      "row_idx": 14,
+      "chars": 27001
+    },
+    {
+      "instance_id": "mido__mido.a0158ff9.func_pm_ctrl_invert_if__i99ulr3u",
+      "traj_id": "mido__mido.a0158ff9.func_pm_ctrl_invert_if__i99ulr3u.8qa84d2e",
+      "row_idx": 56,
+      "chars": 19594
+    },
+    {
+      "instance_id": "theskumar__python-dotenv.2b8635b7.func_pm_remove_assign__9y71521c",
+      "traj_id": "theskumar__python-dotenv.2b8635b7.func_pm_remove_assign__9y71521c.8qa84d2e",
+      "row_idx": 67,
+      "chars": 26406
+    },
+    {
+      "instance_id": "mozillazg__python-pinyin.e42dede5.func_pm_remove_assign__vn346ybe",
+      "traj_id": "mozillazg__python-pinyin.e42dede5.func_pm_remove_assign__vn346ybe.8qa84d2e",
+      "row_idx": 2,
+      "chars": 15758
+    },
+    {
+      "instance_id": "encode__starlette.db5063c2.func_pm_class_rm_base__jwyals4x",
+      "traj_id": "encode__starlette.db5063c2.func_pm_class_rm_base__jwyals4x.8qa84d2e",
+      "row_idx": 30,
+      "chars": 24691
+    },
+    {
+      "instance_id": "tornadoweb__tornado.d5ac65c1.func_pm_remove_wrapper__7nxviy4t",
+      "traj_id": "tornadoweb__tornado.d5ac65c1.func_pm_remove_wrapper__7nxviy4t.8qa84d2e",
+      "row_idx": 41,
+      "chars": 28552
+    },
+    {
+      "instance_id": "tkrajina__gpxpy.09fc46b3.func_pm_ctrl_shuffle__grix6fbc",
+      "traj_id": "tkrajina__gpxpy.09fc46b3.func_pm_ctrl_shuffle__grix6fbc.8qa84d2e",
+      "row_idx": 5,
+      "chars": 21967
+    },
+    {
+      "instance_id": "pexpect__ptyprocess.1067dbda.func_pm_ctrl_shuffle__xib4ybaf",
+      "traj_id": "pexpect__ptyprocess.1067dbda.func_pm_ctrl_shuffle__xib4ybaf.8qa84d2e",
+      "row_idx": 38,
+      "chars": 18030
+    },
+    {
+      "instance_id": "seperman__deepdiff.ed252022.func_pm_remove_cond__6pebtc7y",
+      "traj_id": "seperman__deepdiff.ed252022.func_pm_remove_cond__6pebtc7y.8qa84d2e",
+      "row_idx": 61,
+      "chars": 24465
+    },
+    {
+      "instance_id": "pndurette__gTTS.dbcda4f3.func_pm_class_rm_base__n9eahnvx",
+      "traj_id": "pndurette__gTTS.dbcda4f3.func_pm_class_rm_base__n9eahnvx.8qa84d2e",
+      "row_idx": 48,
+      "chars": 21640
+    },
+    {
+      "instance_id": "sloria__environs.73c372df.func_pm_remove_assign__l35izs7k",
+      "traj_id": "sloria__environs.73c372df.func_pm_remove_assign__l35izs7k.8qa84d2e",
+      "row_idx": 6,
+      "chars": 26422
+    },
+    {
+      "instance_id": "andialbrecht__sqlparse.e57923b3.func_pm_ctrl_invert_if__451qn9zb",
+      "traj_id": "andialbrecht__sqlparse.e57923b3.func_pm_ctrl_invert_if__451qn9zb.8qa84d2e",
+      "row_idx": 66,
+      "chars": 41763
+    },
+    {
+      "instance_id": "facelessuser__soupsieve.a8080d97.func_pm_remove_cond__0nmyui1x",
+      "traj_id": "facelessuser__soupsieve.a8080d97.func_pm_remove_cond__0nmyui1x.8qa84d2e",
+      "row_idx": 8,
+      "chars": 45737
+    },
+    {
+      "instance_id": "mahmoud__boltons.3bfcfdd0.func_pm_remove_cond__qs36kw2a",
+      "traj_id": "mahmoud__boltons.3bfcfdd0.func_pm_remove_cond__qs36kw2a.8qa84d2e",
+      "row_idx": 68,
+      "chars": 23181
+    },
+    {
+      "instance_id": "jd__tenacity.0d40e76f.func_pm_ctrl_shuffle__3ljvivv1",
+      "traj_id": "jd__tenacity.0d40e76f.func_pm_ctrl_shuffle__3ljvivv1.8qa84d2e",
+      "row_idx": 16,
+      "chars": 42661
+    },
+    {
+      "instance_id": "andialbrecht__sqlparse.e57923b3.func_pm_remove_cond__5xn3knbz",
+      "traj_id": "andialbrecht__sqlparse.e57923b3.func_pm_remove_cond__5xn3knbz.8qa84d2e",
+      "row_idx": 18,
+      "chars": 20247
+    },
+    {
+      "instance_id": "marshmallow-code__apispec.8b421526.func_pm_class_rm_funcs__9z4l7um1",
+      "traj_id": "marshmallow-code__apispec.8b421526.func_pm_class_rm_funcs__9z4l7um1.8qa84d2e",
+      "row_idx": 52,
+      "chars": 24884
+    },
+    {
+      "instance_id": "marshmallow-code__apispec.8b421526.func_pm_remove_assign__kdkrbg6a",
+      "traj_id": "marshmallow-code__apispec.8b421526.func_pm_remove_assign__kdkrbg6a.8qa84d2e",
+      "row_idx": 1,
+      "chars": 16775
+    },
+    {
+      "instance_id": "Suor__funcy.207a7810.func_pm_remove_assign__n7ae59f0",
+      "traj_id": "Suor__funcy.207a7810.func_pm_remove_assign__n7ae59f0.8qa84d2e",
+      "row_idx": 15,
+      "chars": 19245
+    }
+  ],
+  "dataset_sha256": "79802869413e9aa1cef04249f3bc7e2a265ebda539c3298ff17d102566e6b7d1"
+}

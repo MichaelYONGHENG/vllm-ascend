@@ -1,0 +1,34 @@
+{
+  "cases": [
+    {
+      "decode_node": "D0",
+      "stream": true,
+      "http_status": 500,
+      "seconds": 1.110288749972824,
+      "followup_answer": "4"
+    },
+    {
+      "decode_node": "D0",
+      "stream": false,
+      "http_status": 500,
+      "seconds": 1.1630529169924557,
+      "followup_answer": "4"
+    },
+    {
+      "decode_node": "D1",
+      "stream": true,
+      "http_status": 500,
+      "seconds": 0.9708140840521082,
+      "followup_answer": "4"
+    },
+    {
+      "decode_node": "D1",
+      "stream": false,
+      "http_status": 500,
+      "seconds": 1.1290378749836236,
+      "followup_answer": "4"
+    }
+  ],
+  "scope": "Real P/D requests with invalid engine identity in KV metadata, not a physical link outage. Deployed v0.30 backport plus streaming API/proxy error fixes.",
+  "passed": true
+}

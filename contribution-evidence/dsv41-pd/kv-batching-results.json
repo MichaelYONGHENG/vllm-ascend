@@ -1,0 +1,370 @@
+[
+  {
+    "stage": "chunk25632_1",
+    "concurrency": 32,
+    "success": 512,
+    "valid_timing": 512,
+    "tps": 627.2345,
+    "ttft": {
+      "n": 512,
+      "mean": 2.8800025375975338,
+      "p50": 2.8120436044991948,
+      "p95": 4.408459651735028,
+      "p99": 5.024665997024275,
+      "max": 5.659528541029431
+    },
+    "tpot_ms": {
+      "n": 512,
+      "mean": 14.350985156201071,
+      "p50": 14.230050748716408,
+      "p95": 19.132167196638292,
+      "p99": 21.52590980923791,
+      "max": 23.51453024012569
+    },
+    "tpot_gt50": 0,
+    "cache_hit_rate": 0.4528581184564384,
+    "kv_ms": {
+      "n": 1024,
+      "mean": 59.90529296875,
+      "p95": 179.4925,
+      "p99": 346.3484999999996,
+      "max": 626.01
+    },
+    "kv_over_1s": 0,
+    "network": {
+      "rx_full_drop_cnt": 0.0,
+      "roce_new_pkt_rty_num": 0.0,
+      "mac_tx_pfc_pkt_num": 0.0,
+      "mac_rx_pfc_pkt_num": 0.0,
+      "roce_ecn_db_num": 0.0,
+      "roce_rx_cnp_pkt_num": 0.0,
+      "roce_tx_cnp_pkt_num": 0.0,
+      "mac_rx_fcs_err_pkt_num": 0.0,
+      "cw_uncorrect_cnt": 0.0,
+      "mac_rx_total_oct_num": 1701473805234.0
+    },
+    "valid_performance_comparison": true
+  },
+  {
+    "stage": "chunk25632_2",
+    "concurrency": 32,
+    "success": 512,
+    "valid_timing": 512,
+    "tps": 561.788,
+    "ttft": {
+      "n": 512,
+      "mean": 3.160901007646771,
+      "p50": 2.935856104508275,
+      "p95": 5.299833035407937,
+      "p99": 6.82770085520402,
+      "max": 7.962998875009362
+    },
+    "tpot_ms": {
+      "n": 512,
+      "mean": 15.670507545454956,
+      "p50": 14.638597906558363,
+      "p95": 21.18076686530347,
+      "p99": 46.459117936065766,
+      "max": 110.85058863549916
+    },
+    "tpot_gt50": 4,
+    "cache_hit_rate": 0.4532579252156554,
+    "kv_ms": {
+      "n": 1024,
+      "mean": 73.08697265625,
+      "p95": 210.62149999999997,
+      "p99": 586.39,
+      "max": 649.92
+    },
+    "kv_over_1s": 0,
+    "network": {
+      "rx_full_drop_cnt": 0.0,
+      "roce_new_pkt_rty_num": 0.0,
+      "mac_tx_pfc_pkt_num": 0.0,
+      "mac_rx_pfc_pkt_num": 0.0,
+      "roce_ecn_db_num": 0.0,
+      "roce_rx_cnp_pkt_num": 0.0,
+      "roce_tx_cnp_pkt_num": 0.0,
+      "mac_rx_fcs_err_pkt_num": 0.0,
+      "cw_uncorrect_cnt": 0.0,
+      "mac_rx_total_oct_num": 1687030464279.0
+    },
+    "valid_performance_comparison": true
+  },
+  {
+    "stage": "chunk25664_1",
+    "concurrency": 64,
+    "success": 512,
+    "valid_timing": 512,
+    "tps": 733.5029,
+    "ttft": {
+      "n": 512,
+      "mean": 6.347665643452615,
+      "p50": 7.256742479017703,
+      "p95": 9.8269334855926,
+      "p99": 10.642286762602744,
+      "max": 11.306620249990374
+    },
+    "tpot_ms": {
+      "n": 512,
+      "mean": 14.483889265235927,
+      "p50": 14.486982189807755,
+      "p95": 18.5916762522115,
+      "p99": 20.665008469124558,
+      "max": 21.54528326810558
+    },
+    "tpot_gt50": 0,
+    "cache_hit_rate": 0.3659165043391791,
+    "kv_ms": {
+      "n": 1024,
+      "mean": 42.203955078125,
+      "p95": 75.75449999999998,
+      "p99": 100.72639999999997,
+      "max": 218.12
+    },
+    "kv_over_1s": 0,
+    "network": {
+      "rx_full_drop_cnt": 0.0,
+      "roce_new_pkt_rty_num": 0.0,
+      "mac_tx_pfc_pkt_num": 0.0,
+      "mac_rx_pfc_pkt_num": 0.0,
+      "roce_ecn_db_num": 0.0,
+      "roce_rx_cnp_pkt_num": 0.0,
+      "roce_tx_cnp_pkt_num": 0.0,
+      "mac_rx_fcs_err_pkt_num": 0.0,
+      "cw_uncorrect_cnt": 0.0,
+      "mac_rx_total_oct_num": 1595107690309.0
+    },
+    "valid_performance_comparison": true
+  },
+  {
+    "stage": "chunk25664_2",
+    "concurrency": 64,
+    "success": 512,
+    "valid_timing": 512,
+    "tps": 725.2041,
+    "ttft": {
+      "n": 512,
+      "mean": 6.108952649418711,
+      "p50": 6.731216229003621,
+      "p95": 9.864553399867145,
+      "p99": 11.06828195235692,
+      "max": 11.861988957971334
+    },
+    "tpot_ms": {
+      "n": 512,
+      "mean": 15.056122941781128,
+      "p50": 15.047386362091585,
+      "p95": 19.37274390360698,
+      "p99": 20.71326540238247,
+      "max": 23.94226926061943
+    },
+    "tpot_gt50": 0,
+    "cache_hit_rate": 0.391736001025845,
+    "kv_ms": {
+      "n": 1024,
+      "mean": 42.3658203125,
+      "p95": 79.407,
+      "p99": 124.11869999999999,
+      "max": 224.05
+    },
+    "kv_over_1s": 0,
+    "network": {
+      "rx_full_drop_cnt": 0.0,
+      "roce_new_pkt_rty_num": 0.0,
+      "mac_tx_pfc_pkt_num": 0.0,
+      "mac_rx_pfc_pkt_num": 0.0,
+      "roce_ecn_db_num": 0.0,
+      "roce_rx_cnp_pkt_num": 0.0,
+      "roce_tx_cnp_pkt_num": 0.0,
+      "mac_rx_fcs_err_pkt_num": 0.0,
+      "cw_uncorrect_cnt": 0.0,
+      "mac_rx_total_oct_num": 1558759409150.0
+    },
+    "valid_performance_comparison": true
+  },
+  {
+    "stage": "original32_1",
+    "concurrency": 32,
+    "success": 512,
+    "valid_timing": 512,
+    "tps": 217.7375,
+    "ttft": {
+      "n": 512,
+      "mean": 9.686580337390296,
+      "p50": 9.78123614549986,
+      "p95": 21.276021050161216,
+      "p99": 29.80783292883483,
+      "max": 33.613274625036865
+    },
+    "tpot_ms": {
+      "n": 512,
+      "mean": 35.91428422884099,
+      "p50": 15.186934108797072,
+      "p95": 139.97154384105198,
+      "p99": 245.44264443660273,
+      "max": 324.95545408435925
+    },
+    "tpot_gt50": 112,
+    "cache_hit_rate": 0.4676580435359307,
+    "kv_ms": {
+      "n": 1024,
+      "mean": 800.856982421875,
+      "p95": 4592.687,
+      "p99": 8797.0304,
+      "max": 13738.1
+    },
+    "kv_over_1s": 163,
+    "network": {
+      "rx_full_drop_cnt": 22747.0,
+      "roce_new_pkt_rty_num": 2325.0,
+      "mac_tx_pfc_pkt_num": 4331.0,
+      "mac_rx_pfc_pkt_num": 0.0,
+      "roce_ecn_db_num": 0.0,
+      "roce_rx_cnp_pkt_num": 0.0,
+      "roce_tx_cnp_pkt_num": 0.0,
+      "mac_rx_fcs_err_pkt_num": 0.0,
+      "cw_uncorrect_cnt": 0.0,
+      "mac_rx_total_oct_num": 2006269254643.0
+    },
+    "valid_performance_comparison": true
+  },
+  {
+    "stage": "original64_1",
+    "concurrency": 64,
+    "success": 512,
+    "valid_timing": 512,
+    "tps": 254.9569,
+    "ttft": {
+      "n": 512,
+      "mean": 13.350777626454601,
+      "p50": 14.430661187507212,
+      "p95": 26.92358399372024,
+      "p99": 32.33028090251144,
+      "max": 42.58959716698155
+    },
+    "tpot_ms": {
+      "n": 512,
+      "mean": 75.82756052637816,
+      "p50": 17.868699461536487,
+      "p95": 245.6059714754,
+      "p99": 321.08393931300805,
+      "max": 370.56937902073923
+    },
+    "tpot_gt50": 226,
+    "cache_hit_rate": 0.39217963781162096,
+    "kv_ms": {
+      "n": 1024,
+      "mean": 1474.011884765625,
+      "p95": 4650.9825,
+      "p99": 13989.7832,
+      "max": 23452.25
+    },
+    "kv_over_1s": 260,
+    "network": {
+      "rx_full_drop_cnt": 23993.0,
+      "roce_new_pkt_rty_num": 2914.0,
+      "mac_tx_pfc_pkt_num": 3288.0,
+      "mac_rx_pfc_pkt_num": 0.0,
+      "roce_ecn_db_num": 0.0,
+      "roce_rx_cnp_pkt_num": 0.0,
+      "roce_tx_cnp_pkt_num": 0.0,
+      "mac_rx_fcs_err_pkt_num": 0.0,
+      "cw_uncorrect_cnt": 0.0,
+      "mac_rx_total_oct_num": 2163633105946.0
+    },
+    "valid_performance_comparison": true
+  },
+  {
+    "stage": "pace2532_1",
+    "concurrency": 32,
+    "success": 512,
+    "valid_timing": 512,
+    "tps": 621.0159,
+    "ttft": {
+      "n": 512,
+      "mean": 2.9540694462220927,
+      "p50": 2.7596908124978654,
+      "p95": 4.489383199880831,
+      "p99": 7.598266133786528,
+      "max": 8.47961054201005
+    },
+    "tpot_ms": {
+      "n": 512,
+      "mean": 14.400472400382293,
+      "p50": 14.316014132326242,
+      "p95": 18.495705487546186,
+      "p99": 20.97593614656346,
+      "max": 22.31090551029648
+    },
+    "tpot_gt50": 0,
+    "cache_hit_rate": 0.4697429978986362,
+    "kv_ms": {
+      "n": 1024,
+      "mean": 39.134794921875,
+      "p95": 78.07749999999993,
+      "p99": 103.6447,
+      "max": 139.53
+    },
+    "kv_over_1s": 0,
+    "network": {
+      "rx_full_drop_cnt": 0.0,
+      "roce_new_pkt_rty_num": 0.0,
+      "mac_tx_pfc_pkt_num": 0.0,
+      "mac_rx_pfc_pkt_num": 0.0,
+      "roce_ecn_db_num": 0.0,
+      "roce_rx_cnp_pkt_num": 0.0,
+      "roce_tx_cnp_pkt_num": 0.0,
+      "mac_rx_fcs_err_pkt_num": 0.0,
+      "cw_uncorrect_cnt": 0.0,
+      "mac_rx_total_oct_num": 1690401588742.0
+    },
+    "valid_performance_comparison": true
+  },
+  {
+    "stage": "pace2564_1",
+    "concurrency": 64,
+    "success": 512,
+    "valid_timing": 512,
+    "tps": 668.21,
+    "ttft": {
+      "n": 512,
+      "mean": 6.300850092631663,
+      "p50": 6.867949062521802,
+      "p95": 10.289611160586356,
+      "p99": 11.160384542624813,
+      "max": 11.620600207999814
+    },
+    "tpot_ms": {
+      "n": 512,
+      "mean": 14.411706693193096,
+      "p50": 14.430248452308753,
+      "p95": 18.12528850238422,
+      "p99": 20.44605718419908,
+      "max": 23.29830833145284
+    },
+    "tpot_gt50": 0,
+    "cache_hit_rate": 0.3687745457362678,
+    "kv_ms": {
+      "n": 1024,
+      "mean": 41.117060546875,
+      "p95": 78.92499999999997,
+      "p99": 96.92569999999999,
+      "max": 112.33
+    },
+    "kv_over_1s": 0,
+    "network": {
+      "rx_full_drop_cnt": 0.0,
+      "roce_new_pkt_rty_num": 0.0,
+      "mac_tx_pfc_pkt_num": 0.0,
+      "mac_rx_pfc_pkt_num": 0.0,
+      "roce_ecn_db_num": 0.0,
+      "roce_rx_cnp_pkt_num": 0.0,
+      "roce_tx_cnp_pkt_num": 0.0,
+      "mac_rx_fcs_err_pkt_num": 0.0,
+      "cw_uncorrect_cnt": 0.0,
+      "mac_rx_total_oct_num": 1623492497632.0
+    },
+    "valid_performance_comparison": true
+  }
+]
