@@ -1,0 +1,65 @@
+{
+  "ascend_main": "1bebfa67c01063875e77e399761da0568d1a8cd9",
+  "verified_vllm_main": "544f182d9f0c9bfe8bd7645525951d5e3692a542",
+  "pr20488_head": "90bec36ebe8d01c10f29c94be379e64f7f856bf5",
+  "pr20491_head": "f175780d0616b800674cc9285ebdc3de1043803e",
+  "image_index_digest": "sha256:8b12802fd94a01e2e5bfbe219dbf067a06075e79ed7514e25a3fb3105e3b9bc2",
+  "image_config_digest": "sha256:3de3d17b0155fa2ca3974904766572c30fbba81bdc7997fb3c4ec440aaf55d02",
+  "versions": {
+    "cann": "9.2.1",
+    "torch": "2.10.0+cpu",
+    "torch_npu": "2.10.0.post4",
+    "triton_ascend": "3.2.2",
+    "transformers": "5.19.0",
+    "mooncake": "0.3.13",
+    "memfabric": "1.3.0",
+    "numpy": "1.26.4",
+    "driver": "25.5.1",
+    "firmware": "7.8.0.6.201"
+  },
+  "hardware": {
+    "servers": 4,
+    "npu_per_server": 8,
+    "npu": "910B3 64GB",
+    "os": "Ubuntu 22.04 ARM64",
+    "page_size": 4096,
+    "prefill": "DP4 TP4",
+    "decode": "DP8 TP2"
+  },
+  "fixed_settings": {
+    "prefill_max_num_batched_tokens": 4096,
+    "prefill_max_num_seqs": 16,
+    "decode_max_num_seqs": 32,
+    "decode_max_num_batched_tokens": 400,
+    "prefill_mc2": false,
+    "model_runner": "MRv1",
+    "prefill_prefix_caching": true,
+    "decode_prefix_caching": false,
+    "engram": {
+      "cpu_offload": true,
+      "dp_shared_memory": true
+    },
+    "decode_graph": "FULL_DECODE_ONLY",
+    "enable_npugraph_ex": true,
+    "draft_tokens": 5,
+    "block_verify": true,
+    "entropy_verify": false,
+    "kv_read_batch_descriptors": 128,
+    "sampling_temperature": 0,
+    "seed": 42,
+    "max_tokens": 512,
+    "proxy": "same deployment session-affinity proxy in all arms"
+  },
+  "main_compatibility": {
+    "legacy_enable_dsa_cp": "Removed upstream; omitted in every main arm. No historical 0.30-to-main causal comparison.",
+    "operator_metadata_overlay_sha256": "2b8b01fc00857ad6de7ed817c1ac3d19fa21b6a0f888c460765756133443becd",
+    "operator_metadata_original_sha256": "2fe2429180a16b3a599175b60cc03241f4432755cef84a9f95f0cbb66d708558",
+    "operator_metadata_scope": "MoeDistributeDispatchV2 signatures 26-28 containing hifloat4_scale removed from aligned dtype/format lists; remaining 26 and binary kernels unchanged; read-only candidate overlay. Raw fails real INT8 ND-to-NZ repro; overlay passes exact roundtrip and FP16 matmul. Not part of either PR.",
+    "dependency_exception": "OpenCV 5.0 requires NumPy>=2, while this Triton/mindstudio environment pins 1.26.4. Basic cv2 smoke passed; text-only model scope."
+  },
+  "connector_sha256": {
+    "raw": "493ef52d7c918161bdf233667f36b8782daabfbe93b0f74e87b29f5012001db8",
+    "batch": "72b11868cdf7c89c7b079fdc25b15af2e225aa83b28ddec71b4bf53383c49cc2",
+    "combined": "a8e2dcac3bd5d6f2f44dae0a08055b4cac53a834af184f176bfd49df65c39533"
+  }
+}

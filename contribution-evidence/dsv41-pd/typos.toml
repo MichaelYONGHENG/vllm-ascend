@@ -1,0 +1,9 @@
+[default.extend-identifiers]
+# Preserve the Ascend driver's exact hardware counter name in measured evidence.
+cw_uncorrect_cnt = "cw_uncorrect_cnt"
+
+[default.extend-words]
+# Hardware/runtime terms already accepted by the repository root config.
+CANN = "CANN"
+cann = "cann"
+ND = "ND"

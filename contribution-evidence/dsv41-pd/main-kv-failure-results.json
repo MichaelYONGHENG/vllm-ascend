@@ -1,0 +1,44 @@
+{
+  "ascend_main": "1bebfa67c01063875e77e399761da0568d1a8cd9",
+  "vllm_main": "544f182d9f0c9bfe8bd7645525951d5e3692a542",
+  "pr20488_head": "90bec36ebe8d01c10f29c94be379e64f7f856bf5",
+  "pr20491_head": "f175780d0616b800674cc9285ebdc3de1043803e",
+  "cases": [
+    {
+      "decode_server": "decode-A",
+      "stream": true,
+      "status": 500,
+      "seconds": 0.6135794169967994,
+      "structured_error": true,
+      "normal_control_correct": true
+    },
+    {
+      "decode_server": "decode-A",
+      "stream": false,
+      "status": 500,
+      "seconds": 0.8395269999746233,
+      "structured_error": true,
+      "normal_control_correct": true
+    },
+    {
+      "decode_server": "decode-B",
+      "stream": true,
+      "status": 500,
+      "seconds": 0.6078288749558851,
+      "structured_error": true,
+      "normal_control_correct": true
+    },
+    {
+      "decode_server": "decode-B",
+      "stream": false,
+      "status": 500,
+      "seconds": 0.5430588340386748,
+      "structured_error": true,
+      "normal_control_correct": true
+    }
+  ],
+  "healthy_backends": 12,
+  "passed": true,
+  "fault": "Replace producer engine identity in real KV metadata; preserve addresses and block mappings",
+  "scope": "MooncakeHybridConnector non-group transfer path observed; grouped-cache branch covered by CPU tests, not claimed as NPU-covered; no physical link fault or online recompute test"
+}

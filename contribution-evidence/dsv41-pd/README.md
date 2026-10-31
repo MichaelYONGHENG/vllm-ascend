@@ -1,6 +1,6 @@
 # DeepSeek V4.1 Flash P/D contribution evidence
 
-Measurements: 2026-10-30 (bounded reads), 2026-10-31 (failure reporting).
+Measurements: 2026-10-30 (0.30 bounded reads), 2026-10-31 (failure reporting and current-main integration).
 This branch contains supporting evidence, not a proposed upstream code change.
 Only aggregate measurements, public dataset identifiers and synthetic tool
 schemas are included. Host addresses, credentials, production configurations
@@ -18,8 +18,7 @@ Hardware runs used vllm-ascend 0.30.0 at
 `c09d3e20b9c45c80b34ae3781440d90904a44023` and vLLM 0.30.0+empty at
 `ced6857afa0ea7b2e3f0846a62e1394e90f15607`, with deployment patches.
 These are **not hardware benchmark results for current upstream main**.
-The contributions port the tested algorithms to main; current-main CPU tests
-are reported separately in each PR. The driver/library combination is an
+The contributions port the tested algorithms to main; current-main NPU/CPU validation is reported separately below and in each PR. The driver/library combination is an
 observed working setup, not a vendor compatibility certification.
 
 ## Fixed Agent replay
@@ -115,3 +114,110 @@ to guarantee a 500 status after streaming has already started.
 No physical network outage or online `recompute` recovery was injected.
 The main-port unit tests cover completion ordering, a concurrently active
 writer, request isolation, empty-block failures and producer compatibility.
+
+## Current-main NPU integration (2026-10-31)
+
+This section is separate from the 0.30 backport measurements above.
+`main-environment.json` pins Ascend main, its verified vLLM main, both revised
+PR heads, the rebuilt image and dependencies. Main was built from source on
+an official nightly ARM64 base; the base image's default release vLLM was
+replaced, so its tag alone is not used as proof of a main build.
+
+The same four-server topology ran the full DeepSeek-V4.1-Flash-1017 W8A8
+checkpoint. All arms held the producer connector at the combined PR source,
+with the same session-affinity proxy. Only the consumer connector and bounded
+read enablement changed:
+
+- **raw:** exact main consumer, no bounded reads or failure patch.
+- **batch:** #20491 consumer, 256 KiB / 128 descriptors, no failure patch.
+- **combined:** #20491 and #20488 consumer, same bounded-read settings.
+
+Thus raw is a **consumer-main baseline**, not four completely unmodified
+main servers. PR #20488 is tested for correctness and lack of ordinary-load
+regression, not claimed to accelerate successful transfers. The same public
+64-session/eight-turn replay and metric definitions above apply. Each measured
+round gets a fresh cache salt. An entire 32-concurrency round warms each arm
+before measurement; warmup records are retained but excluded from ratios.
+Runtime connector hashes and settings are checked before/after each round,
+and client success/token totals are reconciled with all 12 backend counters.
+
+### Environment limitations held constant
+
+This main revision rejects the legacy `enable_dsa_cp` configuration, so it is
+omitted in every arm. MRv1, Prefill batch budget 4096, P DP4/TP4 and D DP8/TP2 remain fixed, with
+no Prefill MC2. The old local CP-metadata and parser backports were not copied
+into the refactored main runtime. Consequently these results are not a causal
+comparison of main versus the historical stable 0.30 deployment.
+
+Actual loading exposed a nightly CANN 9.2.1 operator-metadata incompatibility:
+GE could not parse `hifloat4_scale` in `MoeDistributeDispatchV2`, causing an
+INT8 ND-to-NZ TransData failure before model serving. A strictly pinned,
+candidate-only read-only metadata overlay removed the three unsupported
+signatures (indices 26–28), retaining the other 26 and all binary kernels.
+Original/overlay SHA256 values are in `main-environment.json`. Explicitly
+setting `torch.npu.config.allow_internal_format=True`, converting an
+INT8[1280,16384] tensor to format 29 and back, checking its actual format and
+exact equality, and running FP16 matmul failed on raw metadata and passed with
+the overlay. This is a limited W8A8 workaround, not part of either PR, not a
+vendor compatibility certification, and not support for those new datatypes.
+
+`cann_metadata_compat.py` generates a separate overlay from the exact pinned
+metadata file, verifies both hashes, and refuses in-place writes or an existing
+output. `probe_npu.py` is the real-NPU repro used before and after mounting that
+overlay read-only at the CANN operator-metadata path. The vendor JSON itself
+is not distributed here. Formatting changed neither script’s Python AST.
+
+NumPy 1.26.4 matches this Triton/mindstudio environment but conflicts with
+OpenCV 5's declared NumPy>=2 dependency. A basic cv2 import/conversion passed;
+this acceptance is for text serving, not full vision-stack validation.
+No driver, firmware, network or switch changes were made.
+
+### Current-main measured results
+
+| Arm | Concurrency | tok/s | TTFT P99 s | TPOT mean / P99 ms | KV request-max P99 ms | Drop / retry |
+| --- | --- | --- | --- | --- | --- | --- |
+| raw | 32 | 266.08 | 19.204 | 34.64 / 157.63 | 8606.52 | 22786 / 1867 |
+| raw | 64 | 345.19 | 25.492 | 70.39 / 207.60 | 12891.11 | 26293 / 2293 |
+| batch | 32 | 664.52 | 9.698 | 14.36 / 19.29 | 172.26 | 0 / 0 |
+| batch | 64 | 975.51 | 8.345 | 15.18 / 20.73 | 153.72 | 0 / 0 |
+| combined (run 1) | 32 | 678.09 | 7.958 | 14.50 / 19.73 | 152.87 | 0 / 0 |
+| combined (run 1) | 64 | 888.92 | 11.015 | 17.35 / 52.70 | 130.36 | 0 / 0 |
+| combined (run 2) | 64 | 1073.66 | 6.602 | 15.23 / 22.09 | 182.23 | 0 / 0 |
+| combined (run 3) | 64 | 1051.65 | 6.871 | 15.12 / 20.61 | 174.47 | 0 / 0 |
+
+Eight formal rounds completed **4096/4096 requests**, with **8192 successful TP-level KV reads** and no receive errors. Four full warmup rounds are recorded separately and excluded. Relative to one consumer-main baseline round per concurrency, the standalone bounded-read PR improved throughput by **149.7% at 32** and **182.6% at 64**. Cache hit rates stayed approximately 80.9% in all arms. There is one raw and one batch round per concurrency, one combined 32 round, and three combined 64 rounds; no statistical-significance claim.
+
+All measured bounded-read windows had zero new receive-full drops, RoCE retries and KV calls over one second. Raw 32/raw 64 had 132/191 of 1024 KV reads over one second. KV P99 in the table is the maximum TP-read duration per request, then the percentile across 512 requests; it includes admission wait, not pure wire time. Drop/retry deltas sum all 32 NPU ports.
+
+Combined 64 throughput varied from 888.92 to 1073.66 tok/s; all three rounds pooled by tokens/time yield **997.20tok/s**. The first round had 10 requests with TPOT >50 ms, all in conversation turn 1; both repeats had none. Prefill timing also varied while its source/config remained fixed. These data do not isolate the cause of the first-round slowdown or establish a fixed overhead from the failure patch. The slower round remains included. Residual Prefill and visible-stream tails remain; there is no claim that every latency target is solved.
+
+All four current-main functional suites passed 12/12 cases. Every formal replay's normally completed tool arguments parsed as JSON; incomplete arguments only occurred at the configured 512-token output cap and are counted separately. This establishes protocol/function checks, not correctness of generated code or SWE task success. Per-endpoint counts confirm all 4 Prefill/all 8 Decode endpoints served requests; all 64 sessions retained Prefill affinity. No preemption/recompute was observed in these rounds.
+
+### Request-failure evidence
+
+`main-kv-failure-results.json` records four real metadata failures on this
+main stack: each Decode server, streaming and non-streaming. All returned
+structured HTTP500 within 0.543–0.840s, all four immediate normal controls
+answered correctly, and all 12 backend health endpoints passed. Matching
+request IDs and `KV_RECV_FAILED` were verified on the same log lines.
+The observed device path is the non-group read implementation inside
+`MooncakeHybridConnector`; both internal transfer branches have CPU regression
+coverage, but the grouped-cache branch is not claimed as NPU-covered here.
+Physical link failure, mid-read corruption and online recompute were not
+injected. Temporary fault relays were stopped before formal measurements.
+
+### Review and CI
+
+The review fixes add successful empty-block cleanup and registration before
+queue publication (#20488), and token-specific FIFO cleanup on interrupted
+waiters (#20491). Revised CPU suites pass: 22 tests/40 subtests and 37 tests/36
+subtests respectively; the combined suite passes 42 tests/40 subtests.
+The old empty-block/lifecycle implementation fails the added regression;
+the old interrupted-waiter implementation deadlocks under the event-ordered
+regression. RuntimeError and KeyboardInterrupt are covered.
+
+Official pre-commit/mypy, documentation links and CPU lanes for the recorded
+main and v0.32 pass on these heads. The overall E2E gate still requires a
+maintainer to select exactly one device-test label (`ready-precise`,
+`ready-all` or `main2main`). Local hardware evidence does not imply official
+NPU CI has run or that all repository gates are green.
