@@ -1,0 +1,14 @@
+{
+  "utc_finished": "2026-11-12T05:00:39.678669+00:00",
+  "source_sha256": {
+    "baseline": "ffd9a54456dc6ad10bc7668bc2db52c81edfd5a477f707b41a8be33f56353208",
+    "candidate": "c49d273738ae83f36b6656cac629d582cbd0e403467ab621b3eb66d94b559f1e"
+  },
+  "baseline_commit": "a4971912ceaf3e775425a793369de32a93aa13ba",
+  "topology": "4 Prefill / 8 Decode endpoints; 4 hosts with 8 Ascend 910B3 64 GiB NPUs each",
+  "model": "DeepSeek-V4.1-Flash-1017 W8A8",
+  "backend_environment": "Existing v0.30 deployment with deployment-specific fixes; backends not upgraded for this proxy-only validation",
+  "measurement": "Real P/D HTTP calls; local proxy handler; transport buffers D output and deliberately coalesces or fragments it. No latency/throughput claim.",
+  "candidate_final_source_sha256": "c49d273738ae83f36b6656cac629d582cbd0e403467ab621b3eb66d94b559f1e",
+  "candidate_tested_ast_equals_final": true
+}
